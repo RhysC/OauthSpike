@@ -1,0 +1,16 @@
+﻿@model Dictionary<string, string>
+
+<h2>UserInfo</h2>
+
+<dl>
+    @foreach (var claim in Model)
+    {
+        <dt>
+            @claim.Key
+        </dt>
+
+        <dd>
+            @claim.Value
+        </dd>
+    }
+</dl>
