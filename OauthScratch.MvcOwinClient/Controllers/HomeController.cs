@@ -1,5 +1,7 @@
-﻿using System.Web;
+﻿using System.Security.Claims;
+using System.Web;
 using System.Web.Mvc;
+using OauthScratch.MvcOwinClient.OpenIdConnect;
 
 namespace OauthScratch.MvcOwinClient.Controllers
 {
@@ -14,8 +16,15 @@ namespace OauthScratch.MvcOwinClient.Controllers
         public ActionResult Claims()
         {
             ViewBag.Message = "Claims";
-
             return View();
+        }
+
+        [Authorize]
+        public ActionResult UserInfo()
+        {
+            ViewBag.Message = "User Info";
+            var principal = User as ClaimsPrincipal;
+            return View(principal.GetUserInfo());
         }
 
         public ActionResult Signout()
