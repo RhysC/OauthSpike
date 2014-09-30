@@ -143,13 +143,8 @@ namespace OauthScratch.IdentityServer
                         "write"
                     },
 
-                    IdentityTokenSigningKeyType = SigningKeyTypes.Default,
                     SubjectType = SubjectTypes.Global,
-                    AccessTokenType = AccessTokenType.Jwt,
-                    
-                    IdentityTokenLifetime = 360,
-                    AccessTokenLifetime = 360,
-                }
+                 }
             };
         }
     }
